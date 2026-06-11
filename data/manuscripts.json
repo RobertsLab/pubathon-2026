@@ -4,8 +4,9 @@
     "tagline": "A weekly-ish writing & peer-review voyage. One section per port. All hands on deck.",
     "guideUrl": "https://robertslab.github.io/resources/Writing/",
     "cadenceDays": 14,
-    "anchorMeeting": "2026-01-13",
-    "meetingNote": "We meet every two weeks and tackle one section of the writing guide each time."
+    "anchorMeeting": "2026-06-17",
+    "meetingTime": "10:00–11:00am",
+    "meetingNote": "We meet every two weeks (Wednesdays, 10:00–11:00am) and tackle one section of the writing guide each time."
   },
   "sections": [
     { "key": "title",        "label": "Title",            "emoji": "🎯", "blurb": "Convey the central contribution in one line." },

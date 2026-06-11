@@ -59,6 +59,12 @@ function fmtDate(d) {
   return d.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 }
 
+function nextMeetingLabel(dUntil) {
+  const time = (DATA.config || {}).meetingTime;
+  const when = dUntil == null ? "Next meeting" : dUntil === 0 ? "Next meeting · today!" : `Next meeting · ${dUntil}d`;
+  return time ? `${when} · ${time}` : when;
+}
+
 function daysUntil(dateStr) {
   if (!dateStr) return null;
   const d = new Date(dateStr + "T00:00:00");
@@ -89,7 +95,7 @@ function renderDashboard() {
     { num: total, lbl: "Manuscripts afloat" },
     { num: avg + "%", lbl: "Avg. voyage" },
     { num: harbored, lbl: "In harbor 🏆" },
-    { num: meeting ? fmtDate(meeting) : "—", lbl: dUntil != null ? `Next meeting · ${dUntil}d` : "Next meeting" },
+    { num: meeting ? fmtDate(meeting) : "—", lbl: nextMeetingLabel(dUntil) },
   ];
 
   document.getElementById("dashboard").innerHTML = stats.map(s =>

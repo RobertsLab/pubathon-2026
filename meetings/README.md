@@ -23,7 +23,7 @@ each time. Add a new entry at the top after every meeting.
 
 <!-- Newest entries on top -->
 
-### 2026-01-13 — Kickoff ⚓ Port: Title
+### 2026-06-17 — Kickoff ⚓ Port: Title (10:00–11:00am)
 - **Manuscript(s) in the spotlight:** _starting fleet loaded from the tracker_
 - **What we covered:** How the workshop runs; toured the [tracker](https://robertslab.github.io/pubathon-2026/); everyone confirmed their draft link.
 - **Action items:** Each author skim the [Title + Abstract](https://robertslab.github.io/resources/Writing/) guidance before next meeting.
