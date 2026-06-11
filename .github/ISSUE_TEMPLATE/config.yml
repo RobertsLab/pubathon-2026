@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 Roberts Lab Writing Guide
+    url: https://robertslab.github.io/resources/Writing/
+    about: The guide we work through, one section per meeting.

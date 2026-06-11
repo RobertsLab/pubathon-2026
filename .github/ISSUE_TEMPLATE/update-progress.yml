@@ -1,0 +1,44 @@
+name: "✅ Log progress after a meeting"
+description: "Mark a section complete or change a manuscript's status."
+title: "[Progress] <manuscript> — <section>"
+labels: ["progress"]
+body:
+  - type: markdown
+    attributes:
+      value: "Anchors aweigh! ⛵ Tell us what got done so we can advance the boat."
+  - type: input
+    id: manuscript
+    attributes:
+      label: Manuscript title (or id)
+      placeholder: "Time Series Platform"
+    validations:
+      required: true
+  - type: checkboxes
+    id: completed
+    attributes:
+      label: Sections completed at this meeting
+      options:
+        - label: "🎯 Title"
+        - label: "📝 Abstract"
+        - label: "🧭 Introduction"
+        - label: "🔬 Methods"
+        - label: "📊 Results"
+        - label: "💭 Discussion"
+        - label: "📚 References & Acknowledgments"
+        - label: "✨ Final Edit"
+  - type: dropdown
+    id: status
+    attributes:
+      label: New status (if it changed)
+      options:
+        - "no change"
+        - Idea Stage
+        - Drafting
+        - Revision
+        - Accepted
+      default: 0
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes for the crew
+      placeholder: "Reviewer assigned: ... / blockers / next steps"

@@ -1,0 +1,154 @@
+{
+  "config": {
+    "workshopName": "Pub-a-thon 2026",
+    "tagline": "A weekly-ish writing & peer-review voyage. One section per port. All hands on deck.",
+    "guideUrl": "https://robertslab.github.io/resources/Writing/",
+    "cadenceDays": 14,
+    "anchorMeeting": "2026-01-13",
+    "meetingNote": "We meet every two weeks and tackle one section of the writing guide each time."
+  },
+  "sections": [
+    { "key": "title",        "label": "Title",            "emoji": "🎯", "blurb": "Convey the central contribution in one line." },
+    { "key": "abstract",     "label": "Abstract",         "emoji": "📝", "blurb": "A self-contained mini-paper (150–300 words)." },
+    { "key": "introduction", "label": "Introduction",     "emoji": "🧭", "blurb": "Establish why the work matters." },
+    { "key": "methods",      "label": "Methods",          "emoji": "🔬", "blurb": "Enable replication and judge credibility." },
+    { "key": "results",      "label": "Results",          "emoji": "📊", "blurb": "Present the data and the logical evidence." },
+    { "key": "discussion",   "label": "Discussion",       "emoji": "💭", "blurb": "Interpret findings and implications." },
+    { "key": "references",   "label": "Refs & Acks",      "emoji": "📚", "blurb": "Acknowledge prior work and helpers." },
+    { "key": "edit",         "label": "Final Edit",       "emoji": "✨", "blurb": "The three-pass review: details, structure, big picture." }
+  ],
+  "manuscripts": [
+    {
+      "id": "time-series-platform",
+      "title": "Time Series Platform",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/11_b7EpfBFg9kFRf4A4tHuBQwl9EXhm1giEqTsLDNXL4/edit?tab=t.0",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "High",
+      "startDate": "2025-10-09",
+      "targetDate": "2025-12-03",
+      "sectionsComplete": []
+    },
+    {
+      "id": "poly-ic",
+      "title": "poly I:C",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/1FrojC6oezpUgMt00fLFr3MAk3N3UmVICq2nWpWr4zrA/edit?usp=sharing",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "High",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
+    },
+    {
+      "id": "deep-dive-expression",
+      "title": "Deep Dive Expression",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/1vlWJiuaxKuh6q6XOBVBrGsZkmf6R_JpJMO6wDIGzdx0/edit?usp=sharing",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
+    },
+    {
+      "id": "ceabigr-lncrna",
+      "title": "Ceabigr lncRNA",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/1Nx1GdJ2igvxWMo5VWHY2fL_H_Ws_ek-dFwd70-nQTrk/edit?tab=t.0#heading=h.auc0rhvni8uo",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
+    },
+    {
+      "id": "sea-star-wasting-disease",
+      "title": "Sea Star Wasting Disease",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/1ZsKS_qDDS_pUgQxMHfPGFfG0IPW5sRLhI6AqLMlm-_Q/edit?tab=t.0",
+      "repo": "",
+      "status": "Revision",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": ["title", "abstract", "introduction", "methods", "results", "discussion", "references", "edit"]
+    },
+    {
+      "id": "resazurin",
+      "title": "Resazurin",
+      "authors": "",
+      "link": "https://drive.google.com/drive/u/0/folders/1plNU48W3ccA_QEsi0cwqCzI0v2Q208p2",
+      "repo": "",
+      "status": "Accepted",
+      "urgency": "High",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": ["title", "abstract", "introduction", "methods", "results", "discussion", "references", "edit"]
+    },
+    {
+      "id": "coral-lechate",
+      "title": "Coral Lechate",
+      "authors": "",
+      "link": "https://sarahtanja.github.io/coral-embryo-ecotox-manuscript/",
+      "repo": "https://github.com/sarahtanja/coral-embryo-ecotox-manuscript",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
+    },
+    {
+      "id": "chris-methylation",
+      "title": "Chris Methylation",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/1kpkJZiMX5mr6OrZG7r_N3BCUBB8p-RF-/edit",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
+    },
+    {
+      "id": "stress-priming",
+      "title": "Stress Priming",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/1lzkJm46VNEe1PDb2bk4fHr-NuwHuNUjOAc9R4WE-V_A/edit?tab=t.0",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
+    },
+    {
+      "id": "wescott",
+      "title": "Wescott",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/1kcZxWJz9SLum6fw4-6XeRpd050QonjNSnk_MpaugJag/edit?tab=t.0",
+      "repo": "",
+      "status": "Idea Stage",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
+    },
+    {
+      "id": "coral-zach-chapter-2",
+      "title": "Coral — Zach Chapter 2",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/12-yloz8m1WuZ8F_hOACqi5uFn0rvxXkcM4FFr7Lfd8c/edit?tab=t.0",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
+    }
+  ]
+}

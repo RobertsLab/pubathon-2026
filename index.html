@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pub-a-thon 2026 🚢 Publication Voyage</title>
+  <meta name="description" content="A biweekly scientific writing & peer-review workshop. One section per port — watch each manuscript sail toward publication." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚢</text></svg>" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="waves" aria-hidden="true"></div>
+
+  <header class="hero">
+    <h1>🚢 Pub-a-thon <span class="year">2026</span></h1>
+    <p class="tagline" id="tagline">Loading the fleet…</p>
+
+    <div class="dashboard" id="dashboard"></div>
+
+    <nav class="hero-actions">
+      <a class="btn btn-primary" id="guideLink" href="https://robertslab.github.io/resources/Writing/" target="_blank" rel="noopener">📖 Open the Writing Guide</a>
+      <a class="btn" href="https://github.com/RobertsLab/pubathon-2026/issues/new?template=new-manuscript.yml" target="_blank" rel="noopener">➕ Add a Manuscript</a>
+      <a class="btn" href="https://github.com/RobertsLab/pubathon-2026/issues/new?template=update-progress.yml" target="_blank" rel="noopener">✅ Log Progress</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="legend" id="legend" aria-label="The eight ports of call"></section>
+
+    <section class="controls">
+      <div class="sortwrap">
+        <label for="sort">Chart course by</label>
+        <select id="sort">
+          <option value="progress-desc">Closest to harbor ⚓</option>
+          <option value="progress-asc">Just set sail 🌅</option>
+          <option value="urgency">Urgency 🔥</option>
+          <option value="title">Name A–Z 🔤</option>
+        </select>
+      </div>
+      <input type="search" id="search" placeholder="🔍 Find a manuscript…" aria-label="Search manuscripts" />
+    </section>
+
+    <section class="fleet" id="fleet" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p>
+      Built by the <a href="https://robertslab.github.io/resources/Writing/" target="_blank" rel="noopener">Roberts Lab</a> crew ·
+      Progress is updated each meeting by editing
+      <a href="https://github.com/RobertsLab/pubathon-2026/blob/main/data/manuscripts.json" target="_blank" rel="noopener"><code>data/manuscripts.json</code></a> ·
+      Fair winds and following seas 🌊
+    </p>
+  </footer>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <script src="assets/app.js"></script>
+</body>
+</html>

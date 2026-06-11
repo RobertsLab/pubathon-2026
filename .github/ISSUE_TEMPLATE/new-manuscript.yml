@@ -1,0 +1,78 @@
+name: "➕ Add a manuscript to the fleet"
+description: "Submit a new manuscript to be tracked in Pub-a-thon."
+title: "[Manuscript] <short title>"
+labels: ["new-manuscript"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome aboard! ⚓ Fill this out and a maintainer will add your manuscript to the voyage tracker.
+        (Or open a PR editing `data/manuscripts.json` directly — see CONTRIBUTING.md.)
+  - type: input
+    id: title
+    attributes:
+      label: Manuscript title
+      placeholder: "Oyster heat-shock methylation"
+    validations:
+      required: true
+  - type: input
+    id: authors
+    attributes:
+      label: Lead / co-authors
+      placeholder: "Doe, Smith, et al."
+    validations:
+      required: false
+  - type: input
+    id: link
+    attributes:
+      label: Draft link
+      description: "Google Doc, Overleaf, GitHub manuscript page, etc."
+      placeholder: "https://docs.google.com/document/d/..."
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: Repository link (optional)
+      placeholder: "https://github.com/yourname/your-manuscript"
+    validations:
+      required: false
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current status
+      options:
+        - Idea Stage
+        - Drafting
+        - Revision
+        - Accepted
+      default: 1
+    validations:
+      required: true
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      options:
+        - "Normal"
+        - "High"
+      default: 0
+  - type: input
+    id: target
+    attributes:
+      label: Target submission date (optional)
+      placeholder: "2026-09-01"
+  - type: checkboxes
+    id: sections
+    attributes:
+      label: Which sections are already drafted?
+      description: "Check the ports you've already sailed past."
+      options:
+        - label: "🎯 Title"
+        - label: "📝 Abstract"
+        - label: "🧭 Introduction"
+        - label: "🔬 Methods"
+        - label: "📊 Results"
+        - label: "💭 Discussion"
+        - label: "📚 References & Acknowledgments"
+        - label: "✨ Final Edit"
