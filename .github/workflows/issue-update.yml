@@ -1,0 +1,85 @@
+name: Apply issue to tracker
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  apply:
+    # Only run for our two submission forms.
+    if: contains(join(github.event.issue.labels.*.name, ','), 'new-manuscript') || contains(join(github.event.issue.labels.*.name, ','), 'progress')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Apply issue to manuscripts.json
+        id: apply
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+        run: |
+          set +e
+          MSG=$(python3 scripts/issue_to_data.py)
+          CODE=$?
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+          {
+            echo "message<<EOF"
+            echo "$MSG"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Validate
+        if: steps.apply.outputs.code == '0'
+        run: python3 scripts/validate.py
+
+      - name: Commit & push
+        if: steps.apply.outputs.code == '0'
+        run: |
+          git config user.name "pubathon-bot"
+          git config user.email "actions@github.com"
+          if git diff --quiet; then
+            echo "No changes to commit."
+          else
+            git add data/manuscripts.json
+            git commit -m "Tracker update from #${{ github.event.issue.number }}"
+            git push
+          fi
+
+      - name: Comment success & close
+        if: steps.apply.outputs.code == '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const msg = `${{ steps.apply.outputs.message }}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `${msg}\n\nThe live tracker will refresh once Pages redeploys (a minute or two). 🚢`
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number, state: 'closed'
+            });
+
+      - name: Comment needs-attention
+        if: steps.apply.outputs.code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const msg = `${{ steps.apply.outputs.message }}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `🛟 I couldn't auto-apply this: ${msg}\n\nA maintainer can edit \`data/manuscripts.json\` directly, or you can edit the issue fields and I'll try again.`
+            });

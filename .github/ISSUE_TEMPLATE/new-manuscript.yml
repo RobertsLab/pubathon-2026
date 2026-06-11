@@ -6,8 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Welcome aboard! ⚓ Fill this out and a maintainer will add your manuscript to the voyage tracker.
-        (Or open a PR editing `data/manuscripts.json` directly — see CONTRIBUTING.md.)
+        Welcome aboard! ⚓ Fill this out and submit — a bot adds your manuscript to the
+        tracker automatically and closes this issue. The live page refreshes a minute or two later.
+        (Prefer to do it yourself? Edit `data/manuscripts.json` in a PR — see CONTRIBUTING.md.)
   - type: input
     id: title
     attributes:

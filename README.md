@@ -42,14 +42,21 @@ We meet **every two weeks.** The site shows a live countdown to the next meeting
 
 Two ways:
 
-- **Easy:** open a [New manuscript issue](../../issues/new?template=new-manuscript.yml) and fill out the form.
+- **Easy (automatic):** open a [New manuscript issue](../../issues/new?template=new-manuscript.yml) and fill out the form. A bot ([`issue-update.yml`](.github/workflows/issue-update.yml)) parses it, adds the entry to `data/manuscripts.json`, commits, and closes the issue — the live page refreshes a minute or two later. ✨
 - **Direct:** edit [`data/manuscripts.json`](data/manuscripts.json) and open a PR (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 
 ## ✅ Log progress
 
 After each meeting, mark the section done with a
-[Progress issue](../../issues/new?template=update-progress.yml), or edit the
-manuscript's `sectionsComplete` list in `data/manuscripts.json` directly.
+[Progress issue](../../issues/new?template=update-progress.yml) — the same bot checks
+off those sections (and updates status) automatically. Or edit the manuscript's
+`sectionsComplete` list in `data/manuscripts.json` directly.
+
+> **How the automation works:** when an issue labeled `new-manuscript` or `progress` is
+> opened/edited, the workflow runs [`scripts/issue_to_data.py`](scripts/issue_to_data.py),
+> validates the result, and commits it. If it can't parse the form it comments asking a
+> maintainer to apply it by hand — it never pushes broken data. Requires
+> **Settings → Actions → General → Workflow permissions → Read and write**.
 
 ---
 

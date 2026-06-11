@@ -5,7 +5,7 @@ labels: ["progress"]
 body:
   - type: markdown
     attributes:
-      value: "Anchors aweigh! ⛵ Tell us what got done so we can advance the boat."
+      value: "Anchors aweigh! ⛵ Submit this and a bot advances the boat automatically — checked sections get added to the manuscript and the page refreshes shortly after."
   - type: input
     id: manuscript
     attributes:
