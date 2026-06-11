@@ -9,14 +9,54 @@
     "meetingNote": "We meet every two weeks (Wednesdays, 10:00–11:00am) and tackle one section of the writing guide each time."
   },
   "sections": [
-    { "key": "title",        "label": "Title",            "emoji": "🎯", "blurb": "Convey the central contribution in one line." },
-    { "key": "abstract",     "label": "Abstract",         "emoji": "📝", "blurb": "A self-contained mini-paper (150–300 words)." },
-    { "key": "introduction", "label": "Introduction",     "emoji": "🧭", "blurb": "Establish why the work matters." },
-    { "key": "methods",      "label": "Methods",          "emoji": "🔬", "blurb": "Enable replication and judge credibility." },
-    { "key": "results",      "label": "Results",          "emoji": "📊", "blurb": "Present the data and the logical evidence." },
-    { "key": "discussion",   "label": "Discussion",       "emoji": "💭", "blurb": "Interpret findings and implications." },
-    { "key": "references",   "label": "Refs & Acks",      "emoji": "📚", "blurb": "Acknowledge prior work and helpers." },
-    { "key": "edit",         "label": "Final Edit",       "emoji": "✨", "blurb": "The three-pass review: details, structure, big picture." }
+    {
+      "key": "title",
+      "label": "Title",
+      "emoji": "🎯",
+      "blurb": "Convey the central contribution in one line."
+    },
+    {
+      "key": "abstract",
+      "label": "Abstract",
+      "emoji": "📝",
+      "blurb": "A self-contained mini-paper (150–300 words)."
+    },
+    {
+      "key": "introduction",
+      "label": "Introduction",
+      "emoji": "🧭",
+      "blurb": "Establish why the work matters."
+    },
+    {
+      "key": "methods",
+      "label": "Methods",
+      "emoji": "🔬",
+      "blurb": "Enable replication and judge credibility."
+    },
+    {
+      "key": "results",
+      "label": "Results",
+      "emoji": "📊",
+      "blurb": "Present the data and the logical evidence."
+    },
+    {
+      "key": "discussion",
+      "label": "Discussion",
+      "emoji": "💭",
+      "blurb": "Interpret findings and implications."
+    },
+    {
+      "key": "references",
+      "label": "Refs & Acks",
+      "emoji": "📚",
+      "blurb": "Acknowledge prior work and helpers."
+    },
+    {
+      "key": "edit",
+      "label": "Final Edit",
+      "emoji": "✨",
+      "blurb": "The three-pass review: details, structure, big picture."
+    }
   ],
   "manuscripts": [
     {
@@ -101,7 +141,16 @@
       "urgency": "",
       "startDate": "",
       "targetDate": "",
-      "sectionsComplete": ["title", "abstract", "introduction", "methods", "results", "discussion", "references", "edit"]
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion",
+        "references",
+        "edit"
+      ]
     },
     {
       "id": "resazurin",
@@ -113,7 +162,16 @@
       "urgency": "High",
       "startDate": "",
       "targetDate": "",
-      "sectionsComplete": ["title", "abstract", "introduction", "methods", "results", "discussion", "references", "edit"]
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion",
+        "references",
+        "edit"
+      ]
     },
     {
       "id": "coral-lechate",
@@ -174,6 +232,26 @@
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": []
+    },
+    {
+      "id": "mytilus-biomarkers",
+      "title": "Assessing Mytilus trossulus response to contaminants in Puget Sound using traditional biomarkers",
+      "authors": "Chris Mantegna1*, Steven Roberts1, Mariko Langness2, Danielle Nordstrom2, Alison Gardell3",
+      "link": "https://docs.google.com/document/d/11Wy04OZdgI2hee9WUPuuKiOk6Osnhf-_/edit",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "2026-07-30",
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion",
+        "references"
+      ]
     }
   ]
 }

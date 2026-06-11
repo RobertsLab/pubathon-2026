@@ -77,6 +77,11 @@ def add_manuscript(data, fields):
     if not link:
         return None, "No draft link found in the form."
 
+    # Idempotency: if this draft link is already tracked, don't add a duplicate.
+    for m in data["manuscripts"]:
+        if link and m.get("link") == link:
+            return m, f"⚓ **{m['title']}** is already in the fleet — no change needed."
+
     base = slugify(title)
     existing = {m["id"] for m in data["manuscripts"]}
     mid, n = base, 2
@@ -137,15 +142,22 @@ def update_progress(data, fields):
 def main():
     body = os.environ.get("ISSUE_BODY", "")
     labels = os.environ.get("ISSUE_LABELS", "")
+    title = os.environ.get("ISSUE_TITLE", "")
     fields = parse_form(body)
     data = json.loads(DATA.read_text())
 
-    if "new-manuscript" in labels:
+    # Decide the action from the label OR the issue-title prefix (labels are
+    # nice-to-have but the templates can't apply them unless they already exist
+    # in the repo, so the title prefix is the reliable signal).
+    is_manuscript = "new-manuscript" in labels or title.strip().startswith("[Manuscript]")
+    is_progress = "progress" in labels or title.strip().startswith("[Progress]")
+
+    if is_manuscript:
         obj, msg = add_manuscript(data, fields)
-    elif "progress" in labels:
+    elif is_progress:
         obj, msg = update_progress(data, fields)
     else:
-        print("Issue is not labeled new-manuscript or progress; nothing to do.")
+        print("Issue is not a manuscript or progress submission; nothing to do.")
         sys.exit(2)
 
     if obj is None:

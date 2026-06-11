@@ -2,7 +2,7 @@ name: Apply issue to tracker
 
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [opened, edited, labeled, reopened]
 
 permissions:
   contents: write
@@ -10,8 +10,13 @@ permissions:
 
 jobs:
   apply:
-    # Only run for our two submission forms.
-    if: contains(join(github.event.issue.labels.*.name, ','), 'new-manuscript') || contains(join(github.event.issue.labels.*.name, ','), 'progress')
+    # Run for our two submission forms — detected by title prefix (reliable) or
+    # label (only present if the repo has the new-manuscript / progress labels).
+    if: >
+      startsWith(github.event.issue.title, '[Manuscript]') ||
+      startsWith(github.event.issue.title, '[Progress]') ||
+      contains(join(github.event.issue.labels.*.name, ','), 'new-manuscript') ||
+      contains(join(github.event.issue.labels.*.name, ','), 'progress')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
