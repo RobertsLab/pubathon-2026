@@ -56,6 +56,18 @@
       "sectionsComplete": []
     },
     {
+      "id": "multi-seastar",
+      "title": "Multispecies Sea Star Wasting Disease",
+      "authors": "Crandall et al",
+      "link": "https://docs.google.com/document/d/1z5DrU6AJ1lJPsVdl30dVhYjqGvfV8RQ6fP03RT9tL28/edit?tab=t.0#heading=h.clbqxsygy87f",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "Normal",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
+    },
+    {
       "id": "deep-dive-expression",
       "title": "Deep Dive Expression",
       "authors": "",
