@@ -324,6 +324,22 @@
         "title",
         "abstract"
       ]
+    },
+    {
+      "id": "genomic-markers-associated-with-robust-byssus-attachment-following-environmental-perturbations-in-marine-mussels",
+      "title": "Genomic markers associated with robust byssus attachment following environmental perturbations in marine mussels",
+      "authors": "Matthew N George1, Grace Leuchtenberger2, Henry Berg1, Eric Essington2, Samuel White1, Steven Roberts1, and Emily Carrington2",
+      "link": "https://docs.google.com/document/d/1fKfDU4gHPdMy9xejUA5pZ6YY2HVzsiGSGo7uFVgDln4/edit?tab=t.0",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": [
+        "title",
+        "introduction",
+        "methods"
+      ]
     }
   ]
 }
