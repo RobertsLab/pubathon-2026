@@ -157,12 +157,12 @@
     },
     {
       "id": "resazurin",
-      "title": "Resazurin",
-      "authors": "",
-      "link": "https://drive.google.com/drive/u/0/folders/1plNU48W3ccA_QEsi0cwqCzI0v2Q208p2",
-      "repo": "",
+      "title": "From blue to pink: Resazurin as a high-throughput proxy for metabolic rate in oysters",
+      "authors": "Huffmyer AS, N Ozguner, M Baird, C Elvrum, C Kounellas, D Dicksion, SJ White, L Plough, MR Gavery, N Krebs, W Walton, J Small, M Pitsenbarger, H Ealy-Whitfield, S Robert",
+      "link": "https://www.biorxiv.org/content/10.1101/2025.11.06.686367v1",
+      "repo": "https://github.com/RobertsLab/resazurin-assay-development",
       "status": "Accepted",
-      "urgency": "High",
+      "urgency": "",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
