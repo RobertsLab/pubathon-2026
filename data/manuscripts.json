@@ -291,6 +291,24 @@
         "discussion",
         "references"
       ]
+    },
+    {
+      "id": "integrated-histological-analysis-of-gonad-maturation-in-geoduck",
+      "title": "Integrated histological analysis of gonad maturation in geoduck",
+      "authors": "Shelly A. Wanamaker1, Sam Gurr2, Kaitlyn R. Mitchell1, Grace Crandall1, Brent Vadopalas1,3, Hollie M. Putnam4, and Steven B. Roberts1",
+      "link": "https://docs.google.com/document/d/1YRoMQprj-cUQzBWzJ9lwSXrLbU3UYlutvDPb2QNlcMQ/edit?tab=t.0",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results"
+      ]
     }
   ]
 }
