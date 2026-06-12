@@ -264,6 +264,65 @@ main { max-width: 1080px; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
 
 .empty { text-align: center; color: #5a7682; padding: 2rem; }
 
+/* ---------- peer feedback leaderboard ---------- */
+.feedback-board {
+  background: var(--pearl);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem 1.3rem;
+  box-shadow: var(--shadow);
+  margin-top: 1.5rem;
+}
+.feedback-board .board-title { text-align: center; font-weight: 800; color: var(--sea); margin-bottom: .8rem; }
+.board-row {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .3rem 0;
+}
+.board-rank { width: 1.6rem; text-align: center; flex-shrink: 0; }
+.board-user {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-weight: 700;
+  font-size: .88rem;
+  text-decoration: none;
+  color: var(--sea);
+  width: 11rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.board-user:hover { color: var(--wave); text-decoration: underline; }
+.board-avatar { border-radius: 50%; border: 2px solid #cfe7ef; flex-shrink: 0; }
+.board-track {
+  position: relative;
+  flex: 1;
+  height: 18px;
+  background: linear-gradient(180deg, #d6f0f7, #a9dcea);
+  border: 1px solid #bfe1ec;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.board-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: linear-gradient(90deg, var(--kelp), var(--wave));
+  border-radius: 999px;
+  transition: width 1.1s cubic-bezier(.2,.8,.2,1);
+}
+.board-count { width: 2rem; text-align: right; font-weight: 800; color: var(--sea); flex-shrink: 0; }
+.board-cta { text-align: center; margin: .9rem 0 0; }
+.board-cta a {
+  font-size: .8rem; font-weight: 700; text-decoration: none;
+  background: var(--sky); color: var(--sea);
+  padding: .35rem .7rem; border-radius: 999px; border: 1px solid #cfe7ef;
+}
+.board-cta a:hover { background: #ddeff5; }
+@media (max-width: 540px) { .board-user { width: 7.5rem; } }
+
 footer {
   text-align: center;
   padding: 1.5rem 1.25rem 2.5rem;
@@ -275,5 +334,5 @@ footer code { background: rgba(255,255,255,.6); padding: .1rem .3rem; border-rad
 #confetti { position: fixed; inset: 0; pointer-events: none; z-index: 50; }
 
 @media (prefers-reduced-motion: reduce) {
-  .waves::after, .voyage-fill, .voyage-boat, .sec.next { animation: none; transition: none; }
+  .waves::after, .voyage-fill, .voyage-boat, .sec.next, .board-fill { animation: none; transition: none; }
 }

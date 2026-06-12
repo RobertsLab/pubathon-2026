@@ -1,9 +1,11 @@
 /* Pub-a-thon 2026 — Publication Voyage tracker */
 
 const SHIP_STAGES = ["🌅", "⛵", "🚤", "🛥️", "🚢"]; // just-launched → near harbor
+const REPO = "RobertsLab/pubathon-2026";
 let DATA = null;
 
 init();
+renderFeedbackBoard();
 
 async function init() {
   try {
@@ -202,6 +204,66 @@ function card(m) {
 
     ${links.length ? `<div class="card-links">${links.join("")}</div>` : ""}
   </article>`;
+}
+
+/* ---------- peer feedback leaderboard ---------- */
+async function renderFeedbackBoard() {
+  const el = document.getElementById("feedbackBoard");
+  if (!el) return;
+
+  let issues;
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${REPO}/issues?labels=peer-feedback&state=all&per_page=100`,
+      { headers: { Accept: "application/vnd.github+json" } }
+    );
+    if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+    issues = (await res.json()).filter(i => !i.pull_request);
+  } catch (err) {
+    // Rate-limited or offline — leave the section hidden rather than show an error.
+    return;
+  }
+
+  const heading = `<div class="board-title">🍾 Messages in a Bottle — peer feedback delivered</div>`;
+  const formUrl = `https://github.com/${REPO}/issues/new?template=peer-feedback.yml`;
+  const cta = `<p class="board-cta"><a href="${formUrl}" target="_blank" rel="noopener">💬 Send yours</a></p>`;
+
+  if (!issues.length) {
+    el.innerHTML = heading +
+      `<p class="empty">No feedback logged yet — be the first to send a message in a bottle! 🍾</p>` + cta;
+    el.hidden = false;
+    return;
+  }
+
+  const byUser = new Map();
+  issues.forEach(i => {
+    const u = i.user || {};
+    const rec = byUser.get(u.login) || { login: u.login, avatar: u.avatar_url, url: u.html_url, count: 0 };
+    rec.count++;
+    byUser.set(u.login, rec);
+  });
+
+  const board = [...byUser.values()].sort((a, b) => b.count - a.count || a.login.localeCompare(b.login));
+  const max = board[0].count;
+  const medals = ["🥇", "🥈", "🥉"];
+
+  el.innerHTML = heading + board.map((r, i) => {
+    const w = Math.round((r.count / max) * 100);
+    return `
+    <div class="board-row">
+      <span class="board-rank">${medals[i] || "🍾"}</span>
+      <a class="board-user" href="${r.url}" target="_blank" rel="noopener">
+        <img class="board-avatar" src="${r.avatar}&s=64" alt="" width="28" height="28" loading="lazy" />
+        ${r.login}
+      </a>
+      <div class="board-track"><div class="board-fill" data-pct="${w}"></div></div>
+      <span class="board-count">${r.count}</span>
+    </div>`;
+  }).join("") + cta;
+  el.hidden = false;
+
+  requestAnimationFrame(() =>
+    el.querySelectorAll(".board-fill").forEach(f => f.style.width = f.dataset.pct + "%"));
 }
 
 /* ---------- confetti (lightweight, no deps) ---------- */
