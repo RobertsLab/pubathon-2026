@@ -130,9 +130,9 @@
       "startDate": "",
       "targetDate": "2026-06-30",
       "sectionsComplete": [
-      	"methods",
-      	"results"
-       ]
+        "methods",
+        "results"
+      ]
     },
     {
       "id": "sea-star-wasting-disease",
@@ -191,7 +191,7 @@
         "abstract",
         "introduction"
       ]
-    },  
+    },
     {
       "id": "coral-lechate",
       "title": "Coral Lechate",
@@ -262,6 +262,26 @@
       "urgency": "",
       "startDate": "",
       "targetDate": "2026-07-30",
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion",
+        "references"
+      ]
+    },
+    {
+      "id": "dynamic-dna-methylation-contributes-to-carryover-effects-and-beneficial-acclimatization-in-geoduck-clams",
+      "title": "Dynamic DNA methylation contributes to carryover effects and beneficial acclimatization in geoduck clams",
+      "authors": "Hollie M. Putnam1*§, Shelly A. Wanamaker*2, Samuel J. White2, Laura H. Spencer2, Brent Vadopalas2,3, Aparna Natarajan4, Jonathan Hetzel4, Erich Jaeger4, Jonathan Soohoo4, Cristian Gallardo-Escárate5,6, Frederick W. Goetz7, Steven B. Roberts2",
+      "link": "https://docs.google.com/document/d/1jRkJ176TidUuDflp6Std-PzxNKKU4_A8RitpuvN9K-I/edit?tab=t.0",
+      "repo": "",
+      "status": "Revision",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "2026-09-01",
       "sectionsComplete": [
         "title",
         "abstract",
