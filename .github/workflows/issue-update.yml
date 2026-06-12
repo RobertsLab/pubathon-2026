@@ -7,6 +7,7 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: write
 
 jobs:
   apply:
@@ -49,17 +50,29 @@ jobs:
         run: python3 scripts/validate.py
 
       - name: Commit & push
+        id: commit
         if: steps.apply.outputs.code == '0'
         run: |
           git config user.name "pubathon-bot"
           git config user.email "actions@github.com"
           if git diff --quiet; then
             echo "No changes to commit."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git add data/manuscripts.json
             git commit -m "Tracker update from #${{ github.event.issue.number }}"
             git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Trigger Pages deploy
+        # A push made with GITHUB_TOKEN does not fire other workflows (GitHub's
+        # recursion guard), so the pages.yml push trigger never runs. Dispatch it
+        # explicitly — workflow_dispatch via the API does run with GITHUB_TOKEN.
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run pages.yml --ref main
 
       - name: Comment success & close
         if: steps.apply.outputs.code == '0'
