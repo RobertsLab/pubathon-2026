@@ -340,6 +340,20 @@
         "introduction",
         "methods"
       ]
+    },
+    {
+      "id": "sockeye-salmon-manuscript",
+      "title": "Sockeye Salmon manuscript",
+      "authors": "Matt George",
+      "link": "https://docs.google.com/document/d/19xcEKJfSdz6b7KGZAEr76w9NrCF5RPQ99FFtRt-G-wI/edit?tab=t.0",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": [
+        "methods"
+      ]
     }
   ]
 }
