@@ -177,6 +177,22 @@
       ]
     },
     {
+      "id": "polyploidy",
+      "title": "Polyploidy and environmental stress have distinct impacts on Pacific oyster (Crassostrea gigas) ctenidia methylomes",
+      "authors": "Yaamini",
+      "link": "https://docs.google.com/document/d/1uqPDX2BWuWlEeS_d5JMTATvJFaEJOZED2SOVpqkLOJM/edit?tab=t.0",
+      "repo": "https://github.com/RobertsLab/project-oyster-oa",
+      "status": "Revision",
+      "urgency": "High",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction"
+      ]
+    },  
+    {
       "id": "coral-lechate",
       "title": "Coral Lechate",
       "authors": "",
