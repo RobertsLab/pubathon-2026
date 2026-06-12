@@ -121,15 +121,18 @@
     },
     {
       "id": "ceabigr-lncrna",
-      "title": "Ceabigr lncRNA",
-      "authors": "",
+      "title": "Characterization of Long Non-Coding RNAs in the Eastern Oyster (Crassostrea virginica): Sex-Biased Expression, Sequence Conservation, and Co-expression Networks Under Ocean Acidification",
+      "authors": "Zach, Yaamini, Steven",
       "link": "https://docs.google.com/document/d/1Nx1GdJ2igvxWMo5VWHY2fL_H_Ws_ek-dFwd70-nQTrk/edit?tab=t.0#heading=h.auc0rhvni8uo",
       "repo": "",
       "status": "Drafting",
-      "urgency": "",
+      "urgency": "High",
       "startDate": "",
-      "targetDate": "",
-      "sectionsComplete": []
+      "targetDate": "2026-06-30",
+      "sectionsComplete": [
+      	"methods",
+      	"results"
+       ]
     },
     {
       "id": "sea-star-wasting-disease",
