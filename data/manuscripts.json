@@ -373,6 +373,25 @@
         "discussion",
         "references"
       ]
+    },
+    {
+      "id": "epigenetic-divergence-in-the-thermal-stress-response-of-diploid-and-triploid-pacific-oysters-2",
+      "title": "Epigenetic divergence in the thermal stress response of diploid and triploid Pacific oysters",
+      "authors": "Matthew N. George, Ronit Jain, and Steven B. Roberts",
+      "link": "https://docs.google.com/document/d/17mcGDI-TWmU4vgBXmiXmeofe4qEuFH5inBKBHhG9tzg/edit?usp=sharing",
+      "repo": "https://github.com/mattgeorgephd/WGBS-gigas-ploidy-desiccation",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "2026-08-01",
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion"
+      ]
     }
   ]
 }
