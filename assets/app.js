@@ -214,11 +214,11 @@ async function renderFeedbackBoard() {
   let issues;
   try {
     const res = await fetch(
-      `https://api.github.com/repos/${REPO}/issues?labels=peer-feedback&state=all&per_page=100`,
+      `https://api.github.com/repos/${REPO}/issues?state=all&per_page=100`,
       { headers: { Accept: "application/vnd.github+json" } }
     );
     if (!res.ok) throw new Error(`GitHub API ${res.status}`);
-    issues = (await res.json()).filter(i => !i.pull_request);
+    issues = (await res.json()).filter(i => !i.pull_request && i.title.startsWith("[Feedback]"));
   } catch (err) {
     // Rate-limited or offline — leave the section hidden rather than show an error.
     return;
