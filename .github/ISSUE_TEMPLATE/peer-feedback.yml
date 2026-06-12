@@ -1,0 +1,72 @@
+name: "💬 Give peer feedback on a draft"
+description: "Leave structured feedback on another crew member's draft manuscript."
+title: "[Feedback] <manuscript> — <section(s)>"
+labels: ["peer-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Message in a bottle! 🍾 Use this form to leave constructive feedback on a draft.
+        The issue stays **open** so the author can respond — close it once the feedback
+        has been addressed. Tip: the [Writing Guide](https://robertslab.github.io/resources/Writing/)
+        covers what each section should accomplish.
+  - type: input
+    id: manuscript
+    attributes:
+      label: Manuscript title (or id)
+      placeholder: "Oyster heat-shock methylation"
+    validations:
+      required: true
+  - type: input
+    id: draft
+    attributes:
+      label: Link to the draft you reviewed
+      description: "Google Doc, Overleaf, GitHub manuscript page, etc."
+      placeholder: "https://docs.google.com/document/d/..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: sections
+    attributes:
+      label: Section(s) reviewed
+      description: "Which ports did you inspect?"
+      options:
+        - label: "🎯 Title"
+        - label: "📝 Abstract"
+        - label: "🧭 Introduction"
+        - label: "🔬 Methods"
+        - label: "📊 Results"
+        - label: "💭 Discussion"
+        - label: "📚 References & Acknowledgments"
+        - label: "✨ Final Edit"
+  - type: textarea
+    id: strengths
+    attributes:
+      label: What's working well
+      description: "Start with the wind in their sails — what's clear, compelling, or well-crafted?"
+      placeholder: "The methods are easy to follow, and Figure 2 tells the story on its own..."
+    validations:
+      required: true
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: Suggestions for improvement
+      description: "Be specific and actionable — point to sections, paragraphs, or figures."
+      placeholder: "The intro buries the research question; consider stating it by the end of paragraph 2..."
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions for the author (optional)
+      placeholder: "Was the 2-week acclimation standard for this species? Why exclude the 2024 samples?"
+  - type: dropdown
+    id: assessment
+    attributes:
+      label: Overall assessment
+      options:
+        - "⚓ Ready to sail — minor polish only"
+        - "🌊 Seaworthy with revisions — address suggestions above"
+        - "🛠️ Needs work in dry dock — major revisions before next port"
+    validations:
+      required: true
