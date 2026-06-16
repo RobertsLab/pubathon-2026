@@ -373,6 +373,26 @@
         "results",
         "discussion"
       ]
+    },
+    {
+      "id": "dna-methylation-in-mytilus-chilensis-epigenetic-mechanisms-of-local-adaptation",
+      "title": "DNA methylation in Mytilus chilensis Epigenetic mechanisms of local adaptation",
+      "authors": "Roberts",
+      "link": "https://sr320.github.io/paper-chilean-mussel/",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "2026-10-01",
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion",
+        "references"
+      ]
     }
   ]
 }
