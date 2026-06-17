@@ -431,6 +431,26 @@
         "references",
         "edit"
       ]
+    },
+    {
+      "id": "chapter-2-parental-priming-for-ocean-acidification-resilience-in-manila-clams-mechanistic-insights-gained-through-egg-transcriptome-analysis",
+      "title": "Chapter 2 - Parental Priming for Ocean Acidification Resilience in Manila Clams: Mechanistic Insights Gained Through Egg Transcriptome Analysis",
+      "authors": "",
+      "link": "https://docs.google.com/document/d/19eGRXwsU2W8DM4BAQZ1Ilv0h8tWvv4dgeS1IetVq_7w/edit?usp=sharing",
+      "repo": "https://github.com/meganewing/rphil-oa",
+      "status": "Revision",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "2026-07-07",
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion",
+        "references"
+      ]
     }
   ]
 }
