@@ -252,7 +252,10 @@
       "urgency": "",
       "startDate": "",
       "targetDate": "",
-      "sectionsComplete": []
+      "sectionsComplete": [
+        "title",
+        "introduction"
+      ]
     },
     {
       "id": "mytilus-biomarkers",
