@@ -407,6 +407,27 @@
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": []
+    },
+    {
+      "id": "uncovering-host-parasite-dynamics-gene-expression-shifts-in-hematodinium-infected-chionoecetes-bairdi-in-response-to-temperature-change",
+      "title": "Uncovering Host-Parasite Dynamics: Gene Expression Shifts in Hematodinium-infected Chionoecetes bairdi in Response to Temperature Change",
+      "authors": "Coyle, White, Crandall, Jensen, Roberts",
+      "link": "https://www.biorxiv.org/content/10.1101/2025.06.05.658092v2.abstract",
+      "repo": "",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion",
+        "references",
+        "edit"
+      ]
     }
   ]
 }
