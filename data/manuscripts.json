@@ -130,6 +130,8 @@
       "startDate": "",
       "targetDate": "2026-06-30",
       "sectionsComplete": [
+        "abstract",
+        "introduction",
         "methods",
         "results"
       ]
