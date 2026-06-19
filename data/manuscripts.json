@@ -463,6 +463,24 @@
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": []
+    },
+    {
+      "id": "symbiont-communities-mediate-parental-legacy-effects-on-coral-larval-metabolism",
+      "title": "Symbiont communities mediate parental legacy effects on coral larval metabolism",
+      "authors": "Ariana Huffmyer",
+      "link": "https://docs.google.com/document/d/1fSAcwabHDwPsiIowKHFrbnldrHbIvHLN9AIStqu9G4o/edit?tab=t.0",
+      "repo": "https://github.com/AHuffmyer/larval_symbiont_TPC",
+      "status": "Drafting",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "methods",
+        "results",
+        "references"
+      ]
     }
   ]
 }
