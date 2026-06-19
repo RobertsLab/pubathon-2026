@@ -81,7 +81,15 @@
       "urgency": "High",
       "startDate": "",
       "targetDate": "",
-      "sectionsComplete": []
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion",
+        "references"
+      ]
     },
     {
       "id": "eelgrass",
