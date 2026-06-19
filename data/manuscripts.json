@@ -451,6 +451,18 @@
         "discussion",
         "references"
       ]
+    },
+    {
+      "id": "seasonal-plasticity-of-symbiotic-strategies-clarifies-coral-holobiont-resistance-and-resilience",
+      "title": "Seasonal plasticity of symbiotic strategies clarifies coral holobiont resistance and resilience",
+      "authors": "Ariana Huffmyer",
+      "link": "https://www.biorxiv.org/content/10.1101/2025.11.20.689604v1",
+      "repo": "https://github.com/urol-e5/timeseries",
+      "status": "Revision",
+      "urgency": "",
+      "startDate": "",
+      "targetDate": "",
+      "sectionsComplete": []
     }
   ]
 }
