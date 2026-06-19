@@ -470,7 +470,16 @@
       "urgency": "",
       "startDate": "",
       "targetDate": "",
-      "sectionsComplete": []
+      "sectionsComplete": [
+        "title",
+        "abstract",
+        "introduction",
+        "methods",
+        "results",
+        "discussion",
+        "references",
+        "edit"
+      ]
     },
     {
       "id": "symbiont-communities-mediate-parental-legacy-effects-on-coral-larval-metabolism",
