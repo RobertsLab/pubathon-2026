@@ -73,10 +73,10 @@
     },
     {
       "id": "poly-ic",
-      "title": "poly I:C",
-      "authors": "",
+      "title": "Parental immune priming reshapes offspring performance growth, metabolism, and thermal tolerance in the Pacific Oyster",
+      "authors": "Madeline Baird, Ariana S Huffmyer, Noah Ozguner, Steven Roberts",
       "link": "https://docs.google.com/document/d/1FrojC6oezpUgMt00fLFr3MAk3N3UmVICq2nWpWr4zrA/edit?usp=sharing",
-      "repo": "",
+      "repo": "https://github.com/RobertsLab/polyIC-larvae",
       "status": "Drafting",
       "urgency": "High",
       "startDate": "",
@@ -239,16 +239,18 @@
       "sectionsComplete": []
     },
     {
-      "id": "wescott",
-      "title": "Wescott",
-      "authors": "",
+      "id": "westcott",
+      "title": "Thermal priming enhances acute stress tolerance without major costs to long-term field performance in Pacific Oysters",
+      "authors": "Ariana Huffmyer, Emily Carrington, Steven Roberts",
       "link": "https://docs.google.com/document/d/1kcZxWJz9SLum6fw4-6XeRpd050QonjNSnk_MpaugJag/edit?tab=t.0",
-      "repo": "",
+      "repo": "https://github.com/RobertsLab/project-gigas-conditioning/tree/main",
       "status": "Drafting",
       "urgency": "",
       "startDate": "",
       "targetDate": "",
-      "sectionsComplete": []
+      "sectionsComplete": [
+        "title"
+      ]
     },
     {
       "id": "coral-zach-chapter-2",
@@ -461,9 +463,9 @@
       ]
     },
     {
-      "id": "seasonal-plasticity-of-symbiotic-strategies-clarifies-coral-holobiont-resistance-and-resilience",
+      "id": "timeseries-coral-physiology",
       "title": "Seasonal plasticity of symbiotic strategies clarifies coral holobiont resistance and resilience",
-      "authors": "Ariana Huffmyer",
+      "authors": "Huffmyer AS, EL Strand, S Hackerott, KH Wong, DM Becker, D Conetta, KX Terpis, F Pfab, JM Wong, Z Dellaert, FJ Oliaro, R Cunning, JM Eirin-Lopez, SB Roberts, RM Nisbet, HM Putnam",
       "link": "https://www.biorxiv.org/content/10.1101/2025.11.20.689604v1",
       "repo": "https://github.com/urol-e5/timeseries",
       "status": "Revision",
@@ -482,9 +484,9 @@
       ]
     },
     {
-      "id": "symbiont-communities-mediate-parental-legacy-effects-on-coral-larval-metabolism",
+      "id": "hawaii-coral-larvae-metabolism",
       "title": "Symbiont communities mediate parental legacy effects on coral larval metabolism",
-      "authors": "Ariana Huffmyer",
+      "authors": "Ariana Huffmyer, Jill Ashey, Jennifer Matthews, Andrei Herdean, Josh Hancock, Crawford Drury, Steven Roberts, Hollie Putnam",
       "link": "https://docs.google.com/document/d/1fSAcwabHDwPsiIowKHFrbnldrHbIvHLN9AIStqu9G4o/edit?tab=t.0",
       "repo": "https://github.com/AHuffmyer/larval_symbiont_TPC",
       "status": "Drafting",
