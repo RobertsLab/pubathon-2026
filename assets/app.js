@@ -206,7 +206,15 @@ function card(m) {
   </article>`;
 }
 
-/* ---------- peer feedback leaderboard ---------- */
+/* ---------- participation leaderboard ---------- */
+// Points are awarded for three kinds of contribution. Order matters: the most
+// specific prefix ("[Feedback Request]") must be tested before "[Feedback]".
+const POINT_RULES = [
+  { prefix: "[Feedback Request]", points: 1, emoji: "🙋", label: "requested" },
+  { prefix: "[Feedback]",         points: 1, emoji: "💬", label: "given" },
+  { prefix: "[Progress]",         points: 1, emoji: "📈", label: "progress" },
+];
+
 async function renderFeedbackBoard() {
   const el = document.getElementById("feedbackBoard");
   if (!el) return;
@@ -218,37 +226,46 @@ async function renderFeedbackBoard() {
       { headers: { Accept: "application/vnd.github+json" } }
     );
     if (!res.ok) throw new Error(`GitHub API ${res.status}`);
-    issues = (await res.json()).filter(i => !i.pull_request && i.title.startsWith("[Feedback]"));
+    issues = (await res.json()).filter(i => !i.pull_request);
   } catch (err) {
     // Rate-limited or offline — leave the section hidden rather than show an error.
     return;
   }
 
-  const heading = `<div class="board-title">🍾 Messages in a Bottle — peer feedback delivered</div>`;
+  const heading = `<div class="board-title">🍾 Messages in a Bottle — pubathon participation points</div>`;
   const formUrl = `https://github.com/${REPO}/issues/new?template=peer-feedback.yml`;
-  const cta = `<p class="board-cta"><a href="${formUrl}" target="_blank" rel="noopener">💬 Send yours</a></p>`;
+  const cta = `<p class="board-cta"><a href="${formUrl}" target="_blank" rel="noopener">💬 Join in</a> · points for giving feedback (💬), requesting it (🙋), and logging progress (📈)</p>`;
 
-  if (!issues.length) {
+  const byUser = new Map();
+  issues.forEach(i => {
+    const rule = POINT_RULES.find(r => i.title.startsWith(r.prefix));
+    if (!rule) return;
+    const u = i.user || {};
+    const rec = byUser.get(u.login) ||
+      { login: u.login, avatar: u.avatar_url, url: u.html_url, points: 0, given: 0, requested: 0, progress: 0 };
+    rec.points += rule.points;
+    rec[rule.label]++;
+    byUser.set(u.login, rec);
+  });
+
+  if (!byUser.size) {
     el.innerHTML = heading +
-      `<p class="empty">No feedback logged yet — be the first to send a message in a bottle! 🍾</p>` + cta;
+      `<p class="empty">No contributions logged yet — be the first to send a message in a bottle! 🍾</p>` + cta;
     el.hidden = false;
     return;
   }
 
-  const byUser = new Map();
-  issues.forEach(i => {
-    const u = i.user || {};
-    const rec = byUser.get(u.login) || { login: u.login, avatar: u.avatar_url, url: u.html_url, count: 0 };
-    rec.count++;
-    byUser.set(u.login, rec);
-  });
-
-  const board = [...byUser.values()].sort((a, b) => b.count - a.count || a.login.localeCompare(b.login));
-  const max = board[0].count;
+  const board = [...byUser.values()].sort((a, b) => b.points - a.points || a.login.localeCompare(b.login));
+  const max = board[0].points;
   const medals = ["🥇", "🥈", "🥉"];
 
   el.innerHTML = heading + board.map((r, i) => {
-    const w = Math.round((r.count / max) * 100);
+    const w = Math.round((r.points / max) * 100);
+    const breakdown = [
+      r.given && `💬 ${r.given}`,
+      r.requested && `🙋 ${r.requested}`,
+      r.progress && `📈 ${r.progress}`,
+    ].filter(Boolean).join(" · ");
     return `
     <div class="board-row">
       <span class="board-rank">${medals[i] || "🍾"}</span>
@@ -257,7 +274,7 @@ async function renderFeedbackBoard() {
         ${r.login}
       </a>
       <div class="board-track"><div class="board-fill" data-pct="${w}"></div></div>
-      <span class="board-count">${r.count}</span>
+      <span class="board-count" title="${breakdown}">${r.points}</span>
     </div>`;
   }).join("") + cta;
   el.hidden = false;
