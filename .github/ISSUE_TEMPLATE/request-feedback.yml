@@ -1,0 +1,56 @@
+name: "🙋 Request feedback on your draft"
+description: "Ask the crew to review one or more sections of your manuscript."
+title: "[Feedback Request] <manuscript> — <section(s)>"
+labels: ["feedback-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Hoist the signal flag! 🚩 Use this form to ask shipmates for feedback on your draft.
+        The issue stays **open** until you've gathered the input you need — close it once you're
+        ready to sail on. Reviewers can reply here or open a
+        [💬 Give peer feedback](https://github.com/RobertsLab/pubathon-2026/issues/new?template=peer-feedback.yml) issue.
+  - type: input
+    id: manuscript
+    attributes:
+      label: Manuscript title (or id)
+      placeholder: "Oyster heat-shock methylation"
+    validations:
+      required: true
+  - type: input
+    id: draft
+    attributes:
+      label: Link to the draft you'd like reviewed
+      description: "Google Doc, Overleaf, GitHub manuscript page, etc."
+      placeholder: "https://docs.google.com/document/d/..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: sections
+    attributes:
+      label: Section(s) you'd like reviewed
+      description: "Which ports need a fresh set of eyes?"
+      options:
+        - label: "🎯 Title"
+        - label: "📝 Abstract"
+        - label: "🧭 Introduction"
+        - label: "🔬 Methods"
+        - label: "📊 Results"
+        - label: "💭 Discussion"
+        - label: "📚 References & Acknowledgments"
+        - label: "✨ Final Edit"
+  - type: textarea
+    id: focus
+    attributes:
+      label: What would you like reviewers to focus on?
+      description: "Point reviewers at your biggest questions or concerns."
+      placeholder: "Does the introduction make the research question clear by the end of paragraph 2? Is Figure 2 self-explanatory?"
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Feedback needed by (optional)
+      placeholder: "2026-09-01"
+    validations:
+      required: false
