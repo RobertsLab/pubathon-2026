@@ -14,9 +14,6 @@ const STATUSES = {
 
 let DATA = null;
 
-// Status tags currently selected in the filter bar. Empty = show the whole fleet.
-const activeFilters = new Set();
-
 init();
 renderFeedbackBoard();
 
@@ -34,7 +31,7 @@ async function init() {
   document.getElementById("tagline").textContent = cfg.tagline || "";
   if (cfg.guideUrl) document.getElementById("guideLink").href = cfg.guideUrl;
 
-  renderFilters();
+  renderLegend();
   renderDashboard();
   renderFleet();
 
@@ -87,40 +84,14 @@ function daysUntil(dateStr) {
   return Math.ceil((d - new Date()) / 86400000);
 }
 
-/* ---------- status filter ---------- */
-function renderFilters() {
-  const el = document.getElementById("filters");
-  const counts = DATA.manuscripts.reduce((acc, m) => {
-    acc[m.status] = (acc[m.status] || 0) + 1;
-    return acc;
-  }, {});
-
-  const allChip =
-    `<button type="button" class="filter-chip all ${activeFilters.size ? "" : "on"}"
-       data-status="" aria-pressed="${activeFilters.size ? "false" : "true"}">
-       ⚓ All <span class="n">${DATA.manuscripts.length}</span></button>`;
-
-  const chips = Object.entries(STATUSES).map(([name, st]) => {
-    const on = activeFilters.has(name);
-    return `<button type="button" class="filter-chip ${st.slug} ${on ? "on" : ""}"
-       data-status="${name}" aria-pressed="${on}">
-       ${st.emoji} ${name} <span class="n">${counts[name] || 0}</span></button>`;
-  }).join("");
-
+/* ---------- legend ---------- */
+function renderLegend() {
+  const el = document.getElementById("legend");
   el.innerHTML =
-    `<div class="filters-title">🏷️ Filter by status — tap to combine tags</div>` +
-    allChip + chips;
-
-  el.querySelectorAll(".filter-chip").forEach(btn =>
-    btn.addEventListener("click", () => toggleFilter(btn.dataset.status)));
-}
-
-function toggleFilter(status) {
-  if (!status) activeFilters.clear();          // the "All" chip
-  else if (activeFilters.has(status)) activeFilters.delete(status);
-  else activeFilters.add(status);
-  renderFilters();
-  renderFleet();
+    `<div class="legend-title">⚓ The 8 Ports of Call — one per meeting</div>` +
+    sections().map((s, i) =>
+      `<span class="port-chip" title="${s.blurb}"><span class="n">${i + 1}</span>${s.emoji} ${s.label}</span>`
+    ).join("");
 }
 
 /* ---------- dashboard ---------- */
@@ -150,8 +121,6 @@ function renderFleet() {
   const q = document.getElementById("search").value.trim().toLowerCase();
   let list = [...DATA.manuscripts];
 
-  if (activeFilters.size) list = list.filter(m => activeFilters.has(m.status));
-
   if (q) list = list.filter(m =>
     (m.title || "").toLowerCase().includes(q) ||
     (m.authors || "").toLowerCase().includes(q) ||
@@ -170,11 +139,7 @@ function renderFleet() {
 
   const el = document.getElementById("fleet");
   if (!list.length) {
-    const what = [
-      q ? `“${q}”` : "",
-      activeFilters.size ? [...activeFilters].join(" or ") : "",
-    ].filter(Boolean).join(" + ");
-    el.innerHTML = `<p class="empty">No manuscripts match ${what || "that"}. 🧭</p>`;
+    el.innerHTML = `<p class="empty">No manuscripts match “${q}”. 🧭</p>`;
     return;
   }
   el.innerHTML = list.map(card).join("");
