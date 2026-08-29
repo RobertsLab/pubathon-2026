@@ -28,7 +28,21 @@ We tackle **one section per meeting**, in the order the writing guide recommends
 | 8 | ✨ Final Edit | The three-pass review: details → structure → big picture. |
 
 A manuscript's **progress bar = sections complete ÷ 8.** Reach 8/8 and the boat
-pulls into the harbor 🏝️ (confetti included 🎉).
+pulls into the harbor 🏝️ (confetti included 🎉). Each card lists its own ports, so
+you can see at a glance which ones a manuscript has already sailed past.
+
+## 🏷️ Status tags
+
+Every manuscript carries exactly one status tag. The tracker's filter bar lets you
+tap tags to narrow the fleet — combine several to see, say, everything that's either
+submitted or published.
+
+| Tag | Meaning |
+|-----|---------|
+| ⛵ `Ship-shape` | Under way and making progress — the default for a healthy draft. |
+| 🌊 `Slowly-sinking` | Stalled or taking on water. Sorts to the top under **Needs a hand 🛟**. |
+| 📮 `Submitted` | Out the door and with the editors. |
+| 🏝️ `Published` | Reached the harbor. Counts toward **In harbor 🏆** on the dashboard. |
 
 ## 🗓️ How a meeting works
 

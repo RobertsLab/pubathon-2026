@@ -14,6 +14,9 @@ const STATUSES = {
 
 let DATA = null;
 
+// Status tags currently selected in the filter bar. Empty = show the whole fleet.
+const activeFilters = new Set();
+
 init();
 renderFeedbackBoard();
 
@@ -31,7 +34,7 @@ async function init() {
   document.getElementById("tagline").textContent = cfg.tagline || "";
   if (cfg.guideUrl) document.getElementById("guideLink").href = cfg.guideUrl;
 
-  renderLegend();
+  renderFilters();
   renderDashboard();
   renderFleet();
 
@@ -51,6 +54,15 @@ function pct(m) {
   const total = sections().length;
   const done = (m.sectionsComplete || []).length;
   return Math.round((done / total) * 100);
+}
+
+const searchQuery = () => document.getElementById("search").value.trim().toLowerCase();
+
+function matchesQuery(m, q) {
+  if (!q) return true;
+  return (m.title || "").toLowerCase().includes(q) ||
+    (m.authors || "").toLowerCase().includes(q) ||
+    (m.status || "").toLowerCase().includes(q);
 }
 
 function nextSection(m) {
@@ -84,14 +96,61 @@ function daysUntil(dateStr) {
   return Math.ceil((d - new Date()) / 86400000);
 }
 
-/* ---------- legend ---------- */
-function renderLegend() {
-  const el = document.getElementById("legend");
+/* ---------- status filter ---------- */
+// The bar is built once; toggling only updates the existing chips, so the chip
+// you just pressed keeps keyboard focus instead of being replaced mid-click.
+function renderFilters() {
+  const el = document.getElementById("filters");
+
+  const chips = Object.entries(STATUSES).map(([name, st]) =>
+    `<button type="button" class="filter-chip ${st.slug}" data-status="${name}">
+       ${st.emoji} ${name} <span class="n"></span></button>`).join("");
+
   el.innerHTML =
-    `<div class="legend-title">⚓ The 8 Ports of Call — one per meeting</div>` +
-    sections().map((s, i) =>
-      `<span class="port-chip" title="${s.blurb}"><span class="n">${i + 1}</span>${s.emoji} ${s.label}</span>`
-    ).join("");
+    `<div class="filters-title">🏷️ Filter by status — tap to combine tags</div>` +
+    `<button type="button" class="filter-chip all" data-status="">
+       ⚓ All <span class="n"></span></button>` +
+    chips;
+
+  el.addEventListener("click", e => {
+    const btn = e.target.closest(".filter-chip");
+    if (btn && !btn.disabled) toggleFilter(btn.dataset.status);
+  });
+
+  syncFilters();
+}
+
+// Counts follow the search box, so a chip never promises more boats than the
+// fleet below would actually show.
+function syncFilters() {
+  const q = searchQuery();
+  const matching = DATA.manuscripts.filter(m => matchesQuery(m, q));
+  const counts = matching.reduce((acc, m) => {
+    acc[m.status] = (acc[m.status] || 0) + 1;
+    return acc;
+  }, {});
+
+  document.querySelectorAll("#filters .filter-chip").forEach(btn => {
+    const status = btn.dataset.status;
+    const on = status ? activeFilters.has(status) : activeFilters.size === 0;
+    const n = status ? counts[status] || 0 : matching.length;
+
+    btn.classList.toggle("on", on);
+    btn.setAttribute("aria-pressed", String(on));
+    btn.querySelector(".n").textContent = n;
+
+    // A tag with nothing behind it is a dead end, so grey it out — unless it's
+    // already on (you'd never be able to switch it back off) or focused (the
+    // keyboard user would lose their place mid-toggle).
+    btn.disabled = Boolean(status) && n === 0 && !on && btn !== document.activeElement;
+  });
+}
+
+function toggleFilter(status) {
+  if (!status) activeFilters.clear();          // the "All" chip
+  else if (activeFilters.has(status)) activeFilters.delete(status);
+  else activeFilters.add(status);
+  renderFleet();                               // re-syncs the chips too
 }
 
 /* ---------- dashboard ---------- */
@@ -117,15 +176,13 @@ function renderDashboard() {
 
 /* ---------- fleet ---------- */
 function renderFleet() {
-  const sortBy = document.getElementById("sort").value;
-  const q = document.getElementById("search").value.trim().toLowerCase();
-  let list = [...DATA.manuscripts];
+  syncFilters();
 
-  if (q) list = list.filter(m =>
-    (m.title || "").toLowerCase().includes(q) ||
-    (m.authors || "").toLowerCase().includes(q) ||
-    (m.status || "").toLowerCase().includes(q)
-  );
+  const sortBy = document.getElementById("sort").value;
+  const q = searchQuery();
+  let list = DATA.manuscripts.filter(m => matchesQuery(m, q));
+
+  if (activeFilters.size) list = list.filter(m => activeFilters.has(m.status));
 
   const rank = m => (STATUSES[m.status] || { rank: 1 }).rank;
   list.sort((a, b) => {
@@ -139,7 +196,11 @@ function renderFleet() {
 
   const el = document.getElementById("fleet");
   if (!list.length) {
-    el.innerHTML = `<p class="empty">No manuscripts match “${q}”. 🧭</p>`;
+    const what = [
+      q ? `“${q}”` : "",
+      activeFilters.size ? [...activeFilters].join(" or ") : "",
+    ].filter(Boolean).join(" + ");
+    el.innerHTML = `<p class="empty">No manuscripts match ${what || "that"}. 🧭</p>`;
     return;
   }
   el.innerHTML = list.map(card).join("");

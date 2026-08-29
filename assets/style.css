@@ -111,7 +111,7 @@ a { color: var(--wave); }
 /* ---------- main ---------- */
 main { max-width: 1080px; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
 
-.legend {
+.filters {
   display: flex;
   flex-wrap: wrap;
   gap: .5rem;
@@ -122,19 +122,46 @@ main { max-width: 1080px; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
   box-shadow: var(--shadow);
   margin-bottom: 1.5rem;
 }
-.legend .legend-title { width: 100%; text-align: center; font-weight: 800; color: var(--sea); margin-bottom: .3rem; }
-.port-chip {
+.filters .filters-title { width: 100%; text-align: center; font-weight: 800; color: var(--sea); margin-bottom: .3rem; }
+.filter-chip {
   display: flex;
   align-items: center;
   gap: .4rem;
+  font: inherit;
+  cursor: pointer;
   background: var(--sky);
+  color: var(--sea);
   border: 1px solid #cfe7ef;
   border-radius: 999px;
   padding: .35rem .7rem;
   font-size: .85rem;
   font-weight: 600;
+  transition: background .15s, border-color .15s, transform .15s;
 }
-.port-chip .n { background: var(--wave); color: #fff; border-radius: 50%; width: 1.3rem; height: 1.3rem; display: grid; place-items: center; font-size: .72rem; }
+.filter-chip:hover:not(:disabled) { background: #ddeff5; transform: translateY(-1px); }
+.filter-chip:focus-visible { outline: 2px solid var(--wave); outline-offset: 2px; }
+/* No manuscripts carry this tag right now — nothing to filter to. */
+.filter-chip:disabled { opacity: .45; cursor: default; }
+.filter-chip .n {
+  background: var(--wave);
+  color: #fff;
+  border-radius: 999px;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  padding: 0 .35rem;
+  display: grid;
+  place-items: center;
+  font-size: .72rem;
+}
+
+/* Selected chips take on their tag's colour so the active filter is obvious. */
+.filter-chip.on { color: #fff; border-color: transparent; }
+.filter-chip.on .n { background: rgba(255, 255, 255, .3); }
+.filter-chip.all.on { background: var(--sea); }
+.filter-chip.shipshape.on { background: #14507e; }
+.filter-chip.sinking.on { background: var(--coral); }
+.filter-chip.submitted.on { background: #9a6800; }
+.filter-chip.published.on { background: #14794a; }
 
 .controls {
   display: flex;
