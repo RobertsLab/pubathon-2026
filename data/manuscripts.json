@@ -65,8 +65,7 @@
       "authors": "",
       "link": "https://docs.google.com/document/d/11_b7EpfBFg9kFRf4A4tHuBQwl9EXhm1giEqTsLDNXL4/edit?tab=t.0",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "High",
+      "status": "Ship-shape",
       "startDate": "2025-10-09",
       "targetDate": "2025-12-03",
       "sectionsComplete": []
@@ -77,8 +76,7 @@
       "authors": "Madeline Baird, Ariana S Huffmyer, Noah Ozguner, Steven Roberts",
       "link": "https://docs.google.com/document/d/1FrojC6oezpUgMt00fLFr3MAk3N3UmVICq2nWpWr4zrA/edit?usp=sharing",
       "repo": "https://github.com/RobertsLab/polyIC-larvae",
-      "status": "Revision",
-      "urgency": "High",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -98,8 +96,7 @@
       "authors": "Crandall et al",
       "link": "https://docs.google.com/document/d/1QBI0xQn1SlM4TR-5Bx87Q_DtiLkACgV_b6Wlwp8SHJA/edit?usp=sharing",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "Normal",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": []
@@ -110,8 +107,7 @@
       "authors": "Crandall et al",
       "link": "https://docs.google.com/document/d/1z5DrU6AJ1lJPsVdl30dVhYjqGvfV8RQ6fP03RT9tL28/edit?tab=t.0#heading=h.clbqxsygy87f",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "Normal",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": []
@@ -122,8 +118,7 @@
       "authors": "Durkin et al",
       "link": "https://docs.google.com/document/d/1vlWJiuaxKuh6q6XOBVBrGsZkmf6R_JpJMO6wDIGzdx0/edit?usp=sharing",
       "repo": "https://github.com/urol-e5/deep-dive-expression/tree/main",
-      "status": "Revision",
-      "urgency": "High",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "2026-08-01",
       "sectionsComplete": [
@@ -143,8 +138,7 @@
       "authors": "Zach, Yaamini, Steven",
       "link": "https://docs.google.com/document/d/1Nx1GdJ2igvxWMo5VWHY2fL_H_Ws_ek-dFwd70-nQTrk/edit?tab=t.0#heading=h.auc0rhvni8uo",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "High",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "2026-06-30",
       "sectionsComplete": [
@@ -162,8 +156,7 @@
       "authors": "",
       "link": "https://docs.google.com/document/d/1ZsKS_qDDS_pUgQxMHfPGFfG0IPW5sRLhI6AqLMlm-_Q/edit?tab=t.0",
       "repo": "",
-      "status": "Revision",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -183,8 +176,7 @@
       "authors": "Huffmyer A, N Ozguner, M Baird, C Elvrum, C Kounellas, D Dicksion, S White, L Plough, MR Gavery, N Krebs, W Walton, J Small, M Pitsenbarger, H Ealy-Whitfield, S Robert",
       "link": "https://www.biorxiv.org/content/10.1101/2025.11.06.686367v1",
       "repo": "https://github.com/RobertsLab/resazurin-assay-development",
-      "status": "Accepted",
-      "urgency": "",
+      "status": "Published",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -204,8 +196,7 @@
       "authors": "Yaamini",
       "link": "https://docs.google.com/document/d/1uqPDX2BWuWlEeS_d5JMTATvJFaEJOZED2SOVpqkLOJM/edit?tab=t.0",
       "repo": "https://github.com/RobertsLab/project-oyster-oa",
-      "status": "Revision",
-      "urgency": "High",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -220,8 +211,7 @@
       "authors": "",
       "link": "https://sarahtanja.github.io/coral-embryo-ecotox-manuscript/",
       "repo": "https://github.com/sarahtanja/coral-embryo-ecotox-manuscript",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": []
@@ -232,8 +222,7 @@
       "authors": "",
       "link": "https://docs.google.com/document/d/1kpkJZiMX5mr6OrZG7r_N3BCUBB8p-RF-/edit",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": []
@@ -244,8 +233,7 @@
       "authors": "",
       "link": "https://docs.google.com/document/d/1lzkJm46VNEe1PDb2bk4fHr-NuwHuNUjOAc9R4WE-V_A/edit?tab=t.0",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": []
@@ -256,8 +244,7 @@
       "authors": "Ariana Huffmyer, Emily Carrington, Steven Roberts",
       "link": "https://docs.google.com/document/d/1kcZxWJz9SLum6fw4-6XeRpd050QonjNSnk_MpaugJag/edit?tab=t.0",
       "repo": "https://github.com/RobertsLab/project-gigas-conditioning/tree/main",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -270,8 +257,7 @@
       "authors": "",
       "link": "https://docs.google.com/document/d/12-yloz8m1WuZ8F_hOACqi5uFn0rvxXkcM4FFr7Lfd8c/edit?tab=t.0",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -285,8 +271,7 @@
       "authors": "Chris Mantegna1*, Steven Roberts1, Mariko Langness2, Danielle Nordstrom2, Alison Gardell3",
       "link": "https://docs.google.com/document/d/11Wy04OZdgI2hee9WUPuuKiOk6Osnhf-_/edit",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "2026-07-30",
       "sectionsComplete": [
@@ -305,8 +290,7 @@
       "authors": "Hollie M. Putnam1*§, Shelly A. Wanamaker*2, Samuel J. White2, Laura H. Spencer2, Brent Vadopalas2,3, Aparna Natarajan4, Jonathan Hetzel4, Erich Jaeger4, Jonathan Soohoo4, Cristian Gallardo-Escárate5,6, Frederick W. Goetz7, Steven B. Roberts2",
       "link": "https://docs.google.com/document/d/1jRkJ176TidUuDflp6Std-PzxNKKU4_A8RitpuvN9K-I/edit?tab=t.0",
       "repo": "",
-      "status": "Revision",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "2026-09-01",
       "sectionsComplete": [
@@ -325,8 +309,7 @@
       "authors": "Shelly A. Wanamaker1, Sam Gurr2, Kaitlyn R. Mitchell1, Grace Crandall1, Brent Vadopalas1,3, Hollie M. Putnam4, and Steven B. Roberts1",
       "link": "https://docs.google.com/document/d/1YRoMQprj-cUQzBWzJ9lwSXrLbU3UYlutvDPb2QNlcMQ/edit?tab=t.0",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -343,8 +326,7 @@
       "authors": "Shelly A. Wanamaker",
       "link": "https://docs.google.com/document/d/1aIho7R27-cXpDpuRKlQY_p-3Bi7-HlZMNQcTtH_bigI/edit?tab=t.0",
       "repo": "",
-      "status": "Idea Stage",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -358,8 +340,7 @@
       "authors": "Matthew N George1, Grace Leuchtenberger2, Henry Berg1, Eric Essington2, Samuel White1, Steven Roberts1, and Emily Carrington2",
       "link": "https://docs.google.com/document/d/1fKfDU4gHPdMy9xejUA5pZ6YY2HVzsiGSGo7uFVgDln4/edit?tab=t.0",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -374,8 +355,7 @@
       "authors": "Matt George",
       "link": "https://docs.google.com/document/d/19xcEKJfSdz6b7KGZAEr76w9NrCF5RPQ99FFtRt-G-wI/edit?tab=t.0",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -388,8 +368,7 @@
       "authors": "Matthew N. George, Ronit Jain, and Steven B. Roberts",
       "link": "https://docs.google.com/document/d/17mcGDI-TWmU4vgBXmiXmeofe4qEuFH5inBKBHhG9tzg/edit?usp=sharing",
       "repo": "https://github.com/mattgeorgephd/WGBS-gigas-ploidy-desiccation",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "2026-08-01",
       "sectionsComplete": [
@@ -407,8 +386,7 @@
       "authors": "Roberts",
       "link": "https://sr320.github.io/paper-chilean-mussel/",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "2026-10-01",
       "sectionsComplete": [
@@ -427,8 +405,7 @@
       "authors": "Ewing, Crim, Roberts",
       "link": "https://docs.google.com/document/d/15h0b89xGmAe57lsr57XVEQr7xhC_nJLkFMzLhiV-xQY/edit?usp=sharing",
       "repo": "",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": []
@@ -439,8 +416,7 @@
       "authors": "Coyle, White, Crandall, Jensen, Roberts",
       "link": "https://www.biorxiv.org/content/10.1101/2025.06.05.658092v2.abstract",
       "repo": "",
-      "status": "Revision",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -460,8 +436,7 @@
       "authors": "",
       "link": "https://docs.google.com/document/d/19eGRXwsU2W8DM4BAQZ1Ilv0h8tWvv4dgeS1IetVq_7w/edit?usp=sharing",
       "repo": "https://github.com/meganewing/rphil-oa",
-      "status": "Revision",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "2026-07-07",
       "sectionsComplete": [
@@ -480,8 +455,7 @@
       "authors": "Huffmyer AS, EL Strand, S Hackerott, KH Wong, DM Becker, D Conetta, KX Terpis, F Pfab, JM Wong, Z Dellaert, FJ Oliaro, R Cunning, JM Eirin-Lopez, SB Roberts, RM Nisbet, HM Putnam",
       "link": "https://www.biorxiv.org/content/10.1101/2025.11.20.689604v1",
       "repo": "https://github.com/urol-e5/timeseries",
-      "status": "Accepted",
-      "urgency": "",
+      "status": "Published",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [
@@ -501,8 +475,7 @@
       "authors": "Ariana Huffmyer, Jill Ashey, Jennifer Matthews, Andrei Herdean, Josh Hancock, Crawford Drury, Steven Roberts, Hollie Putnam",
       "link": "https://docs.google.com/document/d/1fSAcwabHDwPsiIowKHFrbnldrHbIvHLN9AIStqu9G4o/edit?tab=t.0",
       "repo": "https://github.com/AHuffmyer/larval_symbiont_TPC",
-      "status": "Drafting",
-      "urgency": "",
+      "status": "Ship-shape",
       "startDate": "",
       "targetDate": "",
       "sectionsComplete": [

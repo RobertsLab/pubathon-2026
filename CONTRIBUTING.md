@@ -14,8 +14,7 @@ Add an object to the `manuscripts` array:
   "authors": "Doe, Smith, et al.",
   "link": "https://docs.google.com/document/d/.../edit",
   "repo": "https://github.com/me/my-manuscript",
-  "status": "Drafting",
-  "urgency": "High",
+  "status": "Ship-shape",
   "startDate": "2026-02-01",
   "targetDate": "2026-09-01",
   "sectionsComplete": ["title", "abstract"]
@@ -27,8 +26,7 @@ Field notes:
 | Field | Notes |
 |-------|-------|
 | `id` | unique, lowercase, kebab-case |
-| `status` | one of `Idea Stage`, `Drafting`, `Revision`, `Accepted` |
-| `urgency` | `High` shows a 🔥 badge; anything else / `""` = normal |
+| `status` | one of `Ship-shape`, `Slowly-sinking`, `Submitted`, `Published` |
 | `repo`, `authors`, `startDate`, `targetDate` | optional — leave `""` if unknown |
 | `sectionsComplete` | list of section **keys** (see below). Order doesn't matter. |
 
@@ -49,7 +47,16 @@ Example — the crew finished **Results** for `time-series-platform`:
 ```
 
 The boat advances to 5/8 = 63% automatically. When all 8 are listed (or `status` is
-`Accepted`), the manuscript reaches harbor 🏝️.
+`Published`), the manuscript reaches harbor 🏝️.
+
+## The four status tags
+
+| Tag | Meaning |
+|-----|---------|
+| ⛵ `Ship-shape` | Under way and making progress — the default for a healthy draft. |
+| 🌊 `Slowly-sinking` | Stalled or taking on water. Sorts to the top under **Needs a hand 🛟**. |
+| 📮 `Submitted` | Out the door and with the editors. |
+| 🏝️ `Published` | Reached the harbor. Counts toward **In harbor 🏆** on the dashboard. |
 
 ## Before you commit
 

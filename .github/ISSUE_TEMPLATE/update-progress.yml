@@ -32,10 +32,10 @@ body:
       label: New status (if it changed)
       options:
         - "no change"
-        - Idea Stage
-        - Drafting
-        - Revision
-        - Accepted
+        - Ship-shape
+        - Slowly-sinking
+        - Submitted
+        - Published
       default: 0
   - type: textarea
     id: notes

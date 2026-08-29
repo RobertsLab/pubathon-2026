@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "manuscripts.json"
 
 REQUIRED_MS_FIELDS = {"id", "title", "link", "status", "sectionsComplete"}
-ALLOWED_STATUS = {"Idea Stage", "Drafting", "Revision", "Accepted"}
+ALLOWED_STATUS = {"Submitted", "Published", "Ship-shape", "Slowly-sinking"}
 
 
 def fail(msg):

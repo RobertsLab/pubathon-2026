@@ -21,7 +21,7 @@ EMOJI_TO_KEY = {
     "🎯": "title", "📝": "abstract", "🧭": "introduction", "🔬": "methods",
     "📊": "results", "💭": "discussion", "📚": "references", "✨": "edit",
 }
-ALLOWED_STATUS = {"Idea Stage", "Drafting", "Revision", "Accepted"}
+ALLOWED_STATUS = {"Submitted", "Published", "Ship-shape", "Slowly-sinking"}
 
 
 def parse_form(body: str) -> dict:
@@ -88,11 +88,9 @@ def add_manuscript(data, fields):
     while mid in existing:
         mid, n = f"{base}-{n}", n + 1
 
-    status = clean(find_field(fields, "status")) or "Idea Stage"
+    status = clean(find_field(fields, "status")) or "Ship-shape"
     if status not in ALLOWED_STATUS:
-        status = "Idea Stage"
-    urgency_raw = clean(find_field(fields, "urgency"))
-    urgency = "High" if urgency_raw.lower() == "high" else ""
+        status = "Ship-shape"
 
     sections_block = find_field(fields, "section") or find_field(fields, "drafted")
     ms = {
@@ -102,7 +100,6 @@ def add_manuscript(data, fields):
         "link": link,
         "repo": clean(find_field(fields, "repo")),
         "status": status,
-        "urgency": urgency,
         "startDate": "",
         "targetDate": clean(find_field(fields, "target")),
         "sectionsComplete": checked_keys(sections_block),

@@ -2,6 +2,16 @@
 
 const SHIP_STAGES = ["🌅", "⛵", "🚤", "🛥️", "🚢"]; // just-launched → near harbor
 const REPO = "RobertsLab/pubathon-2026";
+
+// The four tags a manuscript can carry. `slug` feeds the badge CSS class and
+// `rank` orders the "Needs a hand" sort — sinking boats first.
+const STATUSES = {
+  "Slowly-sinking": { slug: "sinking",   emoji: "🌊", rank: 0 },
+  "Ship-shape":     { slug: "shipshape", emoji: "⛵", rank: 1 },
+  "Submitted":      { slug: "submitted", emoji: "📮", rank: 2 },
+  "Published":      { slug: "published", emoji: "🏝️", rank: 3 },
+};
+
 let DATA = null;
 
 init();
@@ -89,7 +99,7 @@ function renderDashboard() {
   const ms = DATA.manuscripts;
   const total = ms.length;
   const avg = Math.round(ms.reduce((a, m) => a + pct(m), 0) / Math.max(total, 1));
-  const harbored = ms.filter(m => m.status === "Accepted").length;
+  const harbored = ms.filter(m => m.status === "Published").length;
   const meeting = nextMeetingDate();
   const dUntil = meeting ? Math.max(0, Math.ceil((meeting - new Date()) / 86400000)) : null;
 
@@ -117,11 +127,11 @@ function renderFleet() {
     (m.status || "").toLowerCase().includes(q)
   );
 
-  const urg = m => (m.urgency === "High" ? 2 : m.urgency ? 1 : 0);
+  const rank = m => (STATUSES[m.status] || { rank: 1 }).rank;
   list.sort((a, b) => {
     switch (sortBy) {
       case "progress-asc": return pct(a) - pct(b);
-      case "urgency": return urg(b) - urg(a) || pct(b) - pct(a);
+      case "needs-hand": return rank(a) - rank(b) || pct(b) - pct(a);
       case "title": return (a.title || "").localeCompare(b.title || "");
       default: return pct(b) - pct(a);
     }
@@ -146,8 +156,9 @@ function card(m) {
   const done = m.sectionsComplete || [];
   const next = nextSection(m);
   const ship = SHIP_STAGES[Math.min(SHIP_STAGES.length - 1, Math.floor(p / 25))];
-  const cls = m.status === "Accepted" ? "done" : m.status === "Idea Stage" ? "idea" : "";
-  const statusKey = "status-" + (m.status || "").replace(/\s+/g, ".");
+  const st = STATUSES[m.status] || {};
+  const cls = m.status === "Published" ? "done" : m.status === "Slowly-sinking" ? "sinking" : "";
+  const statusKey = "status-" + (st.slug || "unknown");
 
   const portDots = sections().map((s, i) =>
     `<span style="left:${((i + 1) / sections().length) * 100}%"></span>`).join("");
@@ -167,14 +178,23 @@ function card(m) {
   if (m.link) links.push(`<a href="${m.link}" target="_blank" rel="noopener">📄 Draft</a>`);
   if (m.repo) links.push(`<a href="${m.repo}" target="_blank" rel="noopener">💻 Repo</a>`);
 
-  const nextLine = m.status === "Accepted"
-    ? `🏆 <b>Reached the harbor — accepted!</b> Pop the bubbly. 🍾`
-    : next
-      ? `Next port: <b>${next.emoji} ${next.label}</b> — ${next.blurb}`
-      : `All sections drafted — time for the <b>final polish</b>. ✨`;
+  // Published and Submitted are terminal for our purposes — no next port to name.
+  // Slowly-sinking still gets its next port, prefixed with a call for help.
+  const course = next
+    ? `Next port: <b>${next.emoji} ${next.label}</b> — ${next.blurb}`
+    : `All sections drafted — time for the <b>final polish</b>. ✨`;
 
-  const badges = [`<span class="badge ${statusKey}">${m.status || "—"}</span>`];
-  if (m.urgency === "High") badges.push(`<span class="badge urgency">🔥 ${m.urgency}</span>`);
+  const nextLine = m.status === "Published"
+    ? `🏆 <b>Reached the harbor — published!</b> Pop the bubbly. 🍾`
+    : m.status === "Submitted"
+      ? `📮 <b>Out for review</b> — sails trimmed, awaiting word from the editors.`
+      : m.status === "Slowly-sinking"
+        ? `🛟 <b>Taking on water</b> — could use a hand. ${course}`
+        : course;
+
+  const badges = [
+    `<span class="badge ${statusKey}">${st.emoji ? st.emoji + " " : ""}${m.status || "—"}</span>`,
+  ];
 
   return `
   <article class="card ${cls}">

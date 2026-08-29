@@ -168,7 +168,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
   overflow: hidden;
 }
 .card.done { border-top-color: var(--sun); }
-.card.idea { border-top-color: #b9c6cd; }
+.card.sinking { border-top-color: var(--coral); }
 
 .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: .6rem; }
 .card h3 { margin: 0 0 .15rem; font-size: 1.2rem; }
@@ -184,12 +184,11 @@ main { max-width: 1080px; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
   border-radius: 999px;
   white-space: nowrap;
 }
-.badge.status-Drafting { background: #d8ecff; color: #14507e; }
-.badge.status-Revision { background: #fff0d2; color: #9a6800; }
-.badge.status-Accepted { background: #d6f7e4; color: #14794a; }
-.badge.status-Idea.Stage,
-.badge.status-Idea { background: #eceff1; color: #5a7682; }
-.badge.urgency { background: var(--coral); color: #fff; }
+.badge.status-shipshape { background: #d8ecff; color: #14507e; }
+.badge.status-sinking { background: var(--coral); color: #fff; }
+.badge.status-submitted { background: #fff0d2; color: #9a6800; }
+.badge.status-published { background: #d6f7e4; color: #14794a; }
+.badge.status-unknown { background: #eceff1; color: #5a7682; }
 
 /* voyage progress */
 .voyage {

@@ -42,22 +42,15 @@ body:
     id: status
     attributes:
       label: Current status
+      description: "Ship-shape = making way. Slowly-sinking = stalled and could use a hand."
       options:
-        - Idea Stage
-        - Drafting
-        - Revision
-        - Accepted
-      default: 1
+        - Ship-shape
+        - Slowly-sinking
+        - Submitted
+        - Published
+      default: 0
     validations:
       required: true
-  - type: dropdown
-    id: urgency
-    attributes:
-      label: Urgency
-      options:
-        - "Normal"
-        - "High"
-      default: 0
   - type: input
     id: target
     attributes:
