@@ -485,6 +485,19 @@
         "results",
         "references"
       ]
+    },
+    {
+      "id": "thermal-hardening-effects-on-performance-and-stress-tolerance-are-family-specific-in-the-pacific-oyster-crassostrea-gigas",
+      "title": "Thermal hardening effects on performance and stress tolerance are family-specific in the Pacific oyster (Crassostrea gigas)",
+      "authors": "Huffmyer AS, Gavery M, Zhang C, Bernstein M, Roberts S",
+      "link": "https://docs.google.com/document/d/1isCuGcC_qcprMXeEwmNI7k0Ycj6a6T0rfoGhSSiYEks/edit?tab=t.0",
+      "repo": "https://github.com/RobertsLab/manchester-hardening/tree/main",
+      "status": "Ship-shape",
+      "startDate": "",
+      "targetDate": "2027-01-01",
+      "sectionsComplete": [
+        "title"
+      ]
     }
   ]
 }
